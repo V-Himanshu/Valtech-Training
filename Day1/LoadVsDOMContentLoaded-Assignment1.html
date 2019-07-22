@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    	var log = "";
+       window.addEventListener("load", function(){
+	       	 document.getElementsByTagName("p")[0].innerHTML = "Load Called";
+       		console.log("Load in Window Event Called ");
+       });
+
+       document.addEventListener("DOMContentLoaded", function(){
+       	 document.getElementsByTagName("p")[0].innerHTML = "DOMContentLoaded Called";
+       	 console.log("DOMContentLoaded Called");
+       });
+
+      
+       function bodyFunc(){
+       	console.log("Body Called");
+       	document.getElementsByTagName("p")[0].innerHTML = "Body Load Called";
+
+       }
+    </script>
+</head>
+<body onload="bodyFunc()">
+
+<p></p>
+<img src="https://cdn.wallpapersafari.com/99/30/qVQ8ks.jpg" />
+</body>
+</html>
