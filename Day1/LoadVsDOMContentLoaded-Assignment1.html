@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-    	var log = "";
+
+    	//Load event is executed when the whole page has competed loading including the dependent resources such as images, css, etc.,
+    	//The Load operation in window.addEventListener is encountered before the body tag's onload function.
        window.addEventListener("load", function(){
 	       	 document.getElementsByTagName("p")[0].innerHTML = "Load Called";
        		console.log("Load in Window Event Called ");
        });
-
+       //DOMContentLoaded is encountered as soon as the page DOM is loaded. It doesn't wait for the resources to get loaded.
        document.addEventListener("DOMContentLoaded", function(){
        	 document.getElementsByTagName("p")[0].innerHTML = "DOMContentLoaded Called";
        	 console.log("DOMContentLoaded Called");
@@ -25,6 +27,8 @@
        }
     </script>
 </head>
+
+<!-- The onload funtion in body tag is called at the end since it waits for all the resources to be ready before execution. -->
 <body onload="bodyFunc()">
 
 <p></p>
